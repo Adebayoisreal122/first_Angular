@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+      @for(item of items; let i = $index; track item) {
+        <div class="col-md-4 mb-4">
+          <div class="card" [id]="item.available ? 'available' : 'unavailable'">
+            <div class="card-body">
+              <h1 class="card-title my-3">{{item.id}}. {{item.name}}</h1>
+              <h2 class="card-subtitle mb-2 text-body-secondary">the price is {{item.price}}</h2>
+              @if (!item.available) {
+                <h3 class="text-danger">out of stock</h3>
+              }
+              @else {
+                <button class="btn btn-success w-50 my-4" (click)="Order(item)">Order</button>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>

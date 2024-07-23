@@ -1,0 +1,16 @@
+
+
+#available      
+{ color: #11ec11;
+    background-color: rgb(83, 158, 228)
+}
+#available:hover  { color: #00ff00; }
+
+#unavailable      
+{ color: #ff00f2;
+    background-color: rgb(83, 122, 228)
+}
+#unavailable:hover  { color: #ff3300; }
+#available:hover, #unavailable:hover { cursor: pointer; }
+
+#available, #unavailable { border-radius: 10px; }
