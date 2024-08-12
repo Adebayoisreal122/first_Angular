@@ -7,24 +7,46 @@ import { AppliancesComponent } from './appliances/appliances.component';
 import { ProductsComponent } from './products/products.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { DisplayGroceryComponent } from './display-grocery/display-grocery.component';
+import { UserComponent } from './user/user.component';
+import {ContactComponent} from './contact/contact.component'
+import { ParentBehaviourComponent } from './parent-behaviour/parent-behaviour.component';
+import { TempdrivenComponent } from './tempdriven/tempdriven.component';
+import { AssignformComponent } from './assignform/assignform.component';
+import { ReactiveComponent } from './reactive/reactive.component';
+import { ReactivesigninComponent } from './reactivesignin/reactivesignin.component';
+import { ReactivedashboardComponent } from './reactivedashboard/reactivedashboard.component';
+import { TodoComponent } from './todo/todo.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent, title: 'Home' },
     { path: 'home', redirectTo: '', pathMatch: 'full'},
     { path: 'signin', component: SigninComponent,},
+    { path: 'contact', component: ContactComponent,},
+    { path: 'parent', component: ParentBehaviourComponent,},
+    { path: 'template', component: TempdrivenComponent,},
+    { path: 'assign', component: AssignformComponent,},
+    { path: 'reactive', component: ReactiveComponent,},
+    { path: 'reactsignin', component: ReactivesigninComponent,},
+    { path: 'reactdash', component: ReactivedashboardComponent,},
+    { path: 'todo', component: TodoComponent,},
+
+
+
+
+
+
+
     { path: 'products', children: [
      { path: '', component: ProductsComponent, title: 'Products' },
         { path: 'groceries', title: 'Groceries', children: [
             { path: '', component: GroceriesComponent, title: 'Groceries' },
-            { path: ':product-name', component: DisplayGroceryComponent, title: 'Groceries' },   //parameterized or dynamic routing
+            { path: ':id', component: DisplayGroceryComponent, title: 'Groceries' },   //parameterized or dynamic routing
         ]},
         {path: 'clothes', component: ClothesComponent},
         {path: 'appliances', component: AppliancesComponent},
     
     ] }, 
-
-
-
+    {path: 'user', component: UserComponent},
 
     {path: '**', component:  PageNotfoundComponent,}, 
 ];

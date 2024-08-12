@@ -1,0 +1,81 @@
+
+
+<div class="container-fluid">
+    <div class="col-8 mx-auto shadow">
+        <div class="col-10 mx-auto">
+            <h1 class="text-center text-primary">Template Driven Form</h1>
+            <form #myForm="ngForm">
+               
+                <input class="form-control" type="text" name="firstname" [(ngModel)]="fname" #firstname="ngModel"
+                    minlength="5"
+                    [class.is-valid]="firstname.valid && firstname.dirty"
+                    [class.is-invalid]="firstname.invalid && firstname.dirty"
+                    placeholder="First name"
+                    required>
+                <div *ngIf="firstname.invalid && firstname.dirty">
+                    <span class="text-danger" *ngIf="firstname.errors?.['minlength']">The minimum length should be 5</span>
+                    <span class="text-danger" *ngIf="firstname.errors?.['required']">This field is required</span>
+                
+                </div>
+
+                
+                <input class="form-control my-3" type="text" name="lastname" [(ngModel)]="lname" #lastname="ngModel"
+                minlength="5"
+                    [class.is-valid]="lastname.valid && lastname.dirty"
+                    [class.is-invalid]="lastname.invalid && lastname.dirty"
+                    placeholder="Last name"
+                    required>
+                <div *ngIf="lastname.invalid && lastname.dirty">
+                    <span class="text-danger" *ngIf="lastname.errors?.['minlength']">The minimum length should be 5</span>
+                    
+                </div>
+
+                <input class="form-control my-3" type="email" name="email" [(ngModel)]="lemail" #email="ngModel"
+                [class.is-valid]="email.valid && email.dirty"
+                [class.is-invalid]="email.invalid && email.dirty"
+                placeholder="Email"
+                [email]="mail"
+                required>
+            <div *ngIf="email.invalid && email.dirty">
+                <span class="text-danger" *ngIf="email.errors?.['required']">This field is required</span>
+                <span class="text-danger" *ngIf="email.errors?.['email']">Invalid email format (must contain  &#64;mail.com )</span>
+            </div>
+
+               
+                <input class="form-control my-3" type="password" name="password" [(ngModel)]="pass" #password="ngModel"
+                    [class.is-valid]="password.valid && password.dirty"
+                    [class.is-invalid]="password.invalid && password.dirty"
+                    placeholder="Password"
+                    required
+                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"                    >
+                <div *ngIf="password.invalid && password.dirty">
+                    <span class="text-danger" *ngIf="password.errors?.['required']">This field is required</span>
+                    <span class="text-danger" *ngIf="password.errors?.['pattern']">
+                        Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character
+                    </span>
+                </div>
+
+                
+                <input class="form-control my-3" type="text" name="gender" [(ngModel)]="gend" #gender="ngModel"
+                    [class.is-valid]="gender.valid && gender.dirty"
+                    [class.is-invalid]="gender.invalid && gender.dirty"
+                    placeholder="Gender"
+                    required>
+                <div *ngIf="gender.invalid && gender.dirty">
+                    <span class="text-danger" *ngIf="gender.errors?.['required']">This field is required</span>
+                </div>
+
+                <div class="form-check my-3">
+                    <input class="form-check-input" type="checkbox" name="terms" [(ngModel)]="term" #termsRef="ngModel" required>
+                    <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+                </div>
+                <div *ngIf="termsRef.invalid && termsRef.dirty">
+                    <span class="text-danger">You must agree to the terms and conditions</span>
+                </div>
+
+               
+                <button class="btn btn-outline-primary" [disabled]="myForm.invalid || !termsRef.value">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

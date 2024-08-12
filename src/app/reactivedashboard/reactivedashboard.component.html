@@ -1,0 +1,36 @@
+<!-- <p>reactivedashboard works!</p>
+
+
+
+
+<p>{{'Organisation'|slice:0:5}}</p>
+<p>{{'Organisation'|slice:0:2}}</p>
+<p>{{'Organisation'|slice:6:9}}</p>
+<p>{{'Organisation'|slice:0:3}}</p>
+<p>{{'Organisation'|slice:3:5}}</p>
+<p>{{time|date}}</p>
+<p>{{time|date:'yyyy-MM-dd'}}</p>
+<p>{{time|date:'yyyy-MM-dd HH:mm:ss'}}</p>
+<p>{{time|date:'yyyy-MM-dd HH:mm:ss' | uppercase}}</p>
+<p>{{time|date:'yyyy-MM-dd HH:mm:ss' | lowercase}}</p>
+<p>{{time|date:'yyyy-MM-dd HH:mm:ss' | slice:0:10}}</p> -->
+
+
+
+
+
+
+
+<div class="container mt-3">
+  <h4 class="text-center my-3">Welcome! {{ user?.fname }} 😀 You finally made it here! congratulations! 🎉✨ </h4>
+
+    <h2 class="text-center my-3">Your details! 👤 </h2>
+    <div  class="card my-2"  
+     >
+      <div class="card-body">
+        <p><strong>Name:</strong> {{ user?.fname }}</p>
+        <p><strong>Gender:</strong> {{user?.lname }}</p>
+        <p><strong>Email:</strong> {{ user?.lemail }}</p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+
+
+<div>
+
+  <h1>Child Behaviour One</h1>
+
+<div class="shadow mx-auto" *ngFor="let item of contactarray " (click)="updatebehaviour(item)" style="cursor: pointer;">
+
+<p>Name: {{item.name}}</p>
+<p>Phone Number:  {{item.phone}}</p>
+<p>Email: {{item.email}}</p>
+<p>Address:  {{item.address}}</p>
+
+</div>
+
+</div>

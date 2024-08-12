@@ -1,0 +1,27 @@
+<p>tempdriven works!</p>
+
+
+<div class="coontainer-fluid">
+    <div class="col-8 mx-auto shadow">
+        <div class="col-10 mx auto">
+            <h1 class="text-center text-primary ">Template Driven form</h1>
+            <form action="">
+                <input class="form-control"  type="text" name="firstname" [(ngModel)]="fname" #firstname="ngModel"[class.is-valid]="firstname.valid && firstname.dirty" minlength="5" [class.is-invalid]="firstname.invalid" >
+                <div *ngIf="firstname.invalid && firstname.dirty ">
+                    <span class="text-danger text-center" *ngIf="firstname.errors?.['minlength']" > The minimum length should be 5 </span>
+                </div>
+                <input class="form-control my-3"  type="text" name="lastname" [(ngModel)]="lname" #lastname="ngModel"[class.is-valid]="lastname.valid"  [class.is-invalid]="lastname.invalid && lastname.dirty"  required >
+                <div *ngIf="lastname.invalid && lastname.touched ">
+                    <span class="text-danger text-center" *ngIf="lastname.errors?.['required']" > This field is required </span>
+                </div>
+
+                <button class="btn btn-outline-primary">Submit</button>
+            </form>
+<!-- THREE STAGE OF FORM -->
+ <!-- 1. Untouched -->
+  <!-- 2. Touched -->
+   <!-- 3. Pristine -->
+    <!-- 4. Dirty -->
+        </div>
+    </div>
+</div>

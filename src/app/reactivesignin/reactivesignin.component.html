@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="col-8 mx-auto shadow">
+        <div class="col-10 mx-auto">
+            <h1 class="text-center text-success">Reactive Signin Form</h1>
+
+            <div *ngIf="errorMessage" class="text-danger my-2 text-center">
+                <p>
+                    {{ errorMessage }}
+                </p>
+              </div>
+
+
+            <form [formGroup]="formtwo" >
+
+
+                <div class="form-group">
+                    <label for="lemail">Email:</label>
+                    <input type="email" formControlName="lemail" class="form-control" id="lemail" required
+                    [class.is-valid]="formtwo.get('lemail')?.valid"
+                    [class.is-invalid]="formtwo.get('lemail')?.invalid && formtwo.get('lemail')?.touched"
+                    >
+                    <div *ngIf="formtwo.get('lemail')?.invalid && formtwo.get('lemail')?.dirty">
+                        <span class="text-danger" *ngIf="formtwo.get('lemail')?.errors?.['required']">This field is required</span>
+                        <span class="text-danger" *ngIf="formtwo.get('lemail')?.errors?.['email']">This field should be in email format</span>
+                    </div>
+
+
+                      <label for="pass">Password:</label>
+                    <input type="password" formControlName="pass" class="form-control" id="pass" required
+                    [class.is-valid]="formtwo.get('pass')?.valid"
+                    [class.is-invalid]="formtwo.get('pass')?.invalid && formtwo.get('pass')?.touched"
+                    >
+                    <div *ngIf="formtwo.get('pass')?.invalid && formtwo.get('pass')?.dirty">
+                        <span class="text-danger" *ngIf="formtwo.get('pass')?.errors?.['required']">This field is required</span>
+                        <span class="text-danger" *ngIf="formtwo.get('pass')?.errors?.['pattern']">It must contain at least one UPPERCASE, one lowercase, a number and a special character</span>
+                    </div>
+
+                  </div>
+                  <button type="submit" class="btn btn-outline-primary my-2" (click)="signin()" [disabled]="formtwo.invalid"  >Sign In</button>
+
+               </form>
+        </div>
+    </div>
+</div>

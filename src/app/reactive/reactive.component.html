@@ -1,0 +1,97 @@
+
+
+
+
+<div class="container-fluid">
+    <div class="col-8 mx-auto shadow">
+        <div class="col-10 mx-auto">
+            <h1 class="text-center text-success">Reactive Form</h1>
+
+            <div *ngIf="errors" class="text-danger my-2 text-center">
+                <p>
+                    {{ errors }}
+                </p>
+              </div>
+
+            <form [formGroup]="firstForm" >
+               
+                <input 
+    class="form-control" 
+    type="text" 
+    name="firstname" 
+    formControlName="fname"
+    placeholder="First name"
+    [class.is-valid]="firstForm.get('fname')?.valid"
+    [class.is-invalid]="firstForm.get('fname')?.invalid && firstForm.get('fname')?.dirty">
+    <span class="text-success" *ngIf="firstForm.get('fname')?.valid"> correct</span>
+<div *ngIf="firstForm.get('fname')?.invalid && firstForm.get('fname')?.dirty">
+    <span class="text-danger" *ngIf="firstForm.get('fname')?.errors?.['required']">This field is required</span>
+    <span class="text-danger" *ngIf="firstForm.get('fname')?.errors?.['minlength']">The minimum length should be at lease 5 </span>
+</div>
+
+                <input class="form-control my-3" type="text" name="lastname" 
+                formControlName="lname"
+                    placeholder="Last name"
+                    [class.is-valid]="firstForm.get('lname')?.valid"
+                    [class.is-invalid]="firstForm.get('lname')?.invalid && firstForm.get('lname')?.touched"
+                    >
+                    <span class="text-success" *ngIf="firstForm.get('lname')?.valid"> correct</span>
+                    <div *ngIf="firstForm.get('lname')?.invalid && firstForm.get('lname')?.dirty">
+                        <span class="text-danger" *ngIf="firstForm.get('lname')?.errors?.['required']">This field is required</span>
+                        <span class="text-danger" *ngIf="firstForm.get('lname')?.errors?.['minlength']">The minimum length should be at lease 5 </span>
+                    </div>
+            
+                <input class="form-control my-3" type="email" name="email"
+                formControlName="lemail"
+                placeholder="Email"
+                required
+                [class.is-valid]="firstForm.get('lemail')?.valid"
+                [class.is-invalid]="firstForm.get('lemail')?.invalid && firstForm.get('lemail')?.touched">
+                <span class="text-success" *ngIf="firstForm.get('lemail')?.valid"> correct</span>
+
+                <div *ngIf="firstForm.get('lemail')?.invalid && firstForm.get('lemail')?.dirty">
+                    <span class="text-danger" *ngIf="firstForm.get('lemail')?.errors?.['required']">This field is required</span>
+                    <span class="text-danger" *ngIf="firstForm.get('lemail')?.errors?.['email']">This field should be in email format</span>
+                </div>
+               
+                <input class="form-control my-3" type="password" name="password" 
+                formControlName="pass"
+                    placeholder="Password"
+                    required
+                    [class.is-valid]="firstForm.get('pass')?.valid"
+                    [class.is-invalid]="firstForm.get('pass')?.invalid && firstForm.get('pass')?.touched">
+                <span class="text-success" *ngIf="firstForm.get('pass')?.valid"> correct</span>
+
+                    <div *ngIf="firstForm.get('pass')?.invalid && firstForm.get('pass')?.dirty">
+                        <span class="text-danger" *ngIf="firstForm.get('pass')?.errors?.['required']">This field is required</span>
+                        <span class="text-danger" *ngIf="firstForm.get('pass')?.errors?.['pattern']">It must contain at least one UPPERCASE, one lowercase, a number and a special character</span>
+                    </div>
+            
+                <input class="form-control my-3" type="text" name="gender"  
+                formControlName="gend"
+                    placeholder="Gender"
+                    required
+                    [class.is-valid]="firstForm.get('gend')?.valid"
+                    [class.is-invalid]="firstForm.get('gend')?.invalid && firstForm.get('gend')?.touched">
+
+                    <div *ngIf="firstForm.get('gend')?.invalid && firstForm.get('gend')?.dirty">
+                        <span class="text-danger" *ngIf="firstForm.get('gend')?.errors?.['required']">This field is required</span>
+                        <span class="text-danger" *ngIf="firstForm.get('gend')?.errors?.['minlength']">The minimum length should be at lease 4 </span>
+                    </div>
+               
+                    <div class="form-check my-3">
+                        <input class="form-check-input" type="checkbox" formControlName="termsRef" 
+                               [class.is-valid]="firstForm.get('termsRef')?.valid"
+                               [class.is-invalid]="firstForm.get('termsRef')?.invalid && firstForm.get('termsRef')?.touched">
+                        <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+                    </div>
+                    <div *ngIf="firstForm.get('termsRef')?.invalid && firstForm.get('termsRef')?.touched">
+                        <span class="text-danger">You must agree to the terms and conditions</span>
+                    </div>
+                    
+                    <button class="btn btn-outline-primary" (click)="signup()" [disabled]="firstForm.invalid || firstForm.get('termsRef')?.invalid">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>

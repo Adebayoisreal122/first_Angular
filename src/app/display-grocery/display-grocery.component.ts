@@ -11,15 +11,20 @@ import { ProductServicesService } from '../services/product-services.service';
 })
 export class DisplayGroceryComponent {
 
-constructor(public route: ActivatedRoute,
+constructor(public ActivatedRoute: ActivatedRoute,
   public productService: ProductServicesService
 ) { }
 
+public users: any = [];
 
 ngOnInit() :void {
   // console.log(this.route.snapshot.paramMap.get('product-name'));
  
-  this.productService.getUsers().subscribe(user => console.log(user));
+  this.productService.getUsers().subscribe(users => {
+    console.log(users);
+    this.users = users;
+  })
+    
 
  }
 
