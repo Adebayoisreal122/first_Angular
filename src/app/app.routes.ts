@@ -16,18 +16,31 @@ import { ReactiveComponent } from './reactive/reactive.component';
 import { ReactivesigninComponent } from './reactivesignin/reactivesignin.component';
 import { ReactivedashboardComponent } from './reactivedashboard/reactivedashboard.component';
 import { TodoComponent } from './todo/todo.component';
+import { guardGuard } from './guards/guard.guard';
+import { GuardashboardComponent } from './guardashboard/guardashboard.component';
+import { ParentpromptComponent } from './parentprompt/parentprompt.component';
+import { MaterialComponent } from './material/material.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent, title: 'Home' },
     { path: 'home', redirectTo: '', pathMatch: 'full'},
     { path: 'signin', component: SigninComponent,},
-    { path: 'contact', component: ContactComponent,},
+    { path: 'contact', component: ContactComponent, canActivate: [guardGuard] },
     { path: 'parent', component: ParentBehaviourComponent,},
     { path: 'template', component: TempdrivenComponent,},
     { path: 'assign', component: AssignformComponent,},
     { path: 'reactive', component: ReactiveComponent,},
     { path: 'reactsignin', component: ReactivesigninComponent,},
-    { path: 'reactdash', component: ReactivedashboardComponent,},
+    { path: 'reactdash/:id', component: ReactivedashboardComponent,canActivate: [guardGuard] },
+    // { path: 'reactdash', component: ReactivedashboardComponent,canActivate: [guardGuard] },
+    // { path: 'dashboard', component: GuardashboardComponent,canActivate: [guardGuard] },
+
+    { path: 'parentprompt', component: ParentpromptComponent,},
+    { path: 'material', component: MaterialComponent,},
+
+
+
+
     { path: 'todo', component: TodoComponent,},
 
 

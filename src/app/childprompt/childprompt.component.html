@@ -1,0 +1,14 @@
+
+
+
+
+<div>
+    <h4 class="text-success text-center">This is Child Prompt</h4>
+    <p class="text-success my-3">
+     <strong>The message from parent</strong>   {{msgforomparent}}
+    </p>
+
+    <input type="text" class="form-control" [(ngModel)]="msgfromchild" placeholder="Enter message to parent">
+
+    <button class="btn btn-success my-3" (click)="sendMsgToParent()">Send message to parent</button>
+</div>

@@ -22,7 +22,7 @@ public firstForm=this.formbuild.group({
   lname:  ['', [Validators.required, Validators.minLength(5)  ]],
   lemail:  ['', [Validators.required,  Validators.email] ],  
   pass: ['', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).*$/)]],
-  gend:  ['', [Validators.required, Validators.minLength(4)  ]],
+  username:  ['', [Validators.required, Validators.minLength(5)  ]],
   termsRef: new FormControl(false, [Validators.requiredTrue]), 
 
 })

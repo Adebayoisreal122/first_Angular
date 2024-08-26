@@ -22,6 +22,9 @@
 
 
 <div class="container mt-3">
+
+  <button class="btn btn-warning" (click)="logout()">Logout</button>
+
   <h4 class="text-center my-3">Welcome! {{ user?.fname }} 😀 You finally made it here! congratulations! 🎉✨ </h4>
 
     <h2 class="text-center my-3">Your details! 👤 </h2>
@@ -29,7 +32,7 @@
      >
       <div class="card-body">
         <p><strong>Name:</strong> {{ user?.fname }}</p>
-        <p><strong>Gender:</strong> {{user?.lname }}</p>
+        <p><strong>Username:</strong> {{user?.username }}</p>
         <p><strong>Email:</strong> {{ user?.lemail }}</p>
       </div>
     </div>

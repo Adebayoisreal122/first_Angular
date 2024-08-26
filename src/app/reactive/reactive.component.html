@@ -68,15 +68,15 @@
                     </div>
             
                 <input class="form-control my-3" type="text" name="gender"  
-                formControlName="gend"
-                    placeholder="Gender"
+                formControlName="username"
+                    placeholder="username"
                     required
-                    [class.is-valid]="firstForm.get('gend')?.valid"
-                    [class.is-invalid]="firstForm.get('gend')?.invalid && firstForm.get('gend')?.touched">
+                    [class.is-valid]="firstForm.get('username')?.valid"
+                    [class.is-invalid]="firstForm.get('username')?.invalid && firstForm.get('username')?.touched">
 
-                    <div *ngIf="firstForm.get('gend')?.invalid && firstForm.get('gend')?.dirty">
-                        <span class="text-danger" *ngIf="firstForm.get('gend')?.errors?.['required']">This field is required</span>
-                        <span class="text-danger" *ngIf="firstForm.get('gend')?.errors?.['minlength']">The minimum length should be at lease 4 </span>
+                    <div *ngIf="firstForm.get('username')?.invalid && firstForm.get('username')?.dirty">
+                        <span class="text-danger" *ngIf="firstForm.get('username')?.errors?.['required']">This field is required</span>
+                        <span class="text-danger" *ngIf="firstForm.get('username')?.errors?.['minlength']">The minimum length should be at lease 5  </span>
                     </div>
                
                     <div class="form-check my-3">

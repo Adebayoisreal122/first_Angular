@@ -1,0 +1,21 @@
+
+
+
+<div class="container">
+    <div class="col-10 mx-auto shadow p-3 mb-5 bg-white rounded">
+        
+        <div>
+         <div>
+            <input type="text" name="sender" class="form-control" [(ngModel)]="message">
+
+            <button class="btn btn-primary mt-3" (click)="sendMsg()">Send to Child</button>
+         </div>
+         <p class="shadow p-3 mb-5 bg-white rounded">Message from child: {{childMessage}} </p>
+        </div>
+        <div>
+            <app-childprompt [msgforomparent]="messageToChild" (msgfromchildEvent)="recieveMsg($event)"></app-childprompt>
+        </div>
+
+
+    </div>
+</div> 

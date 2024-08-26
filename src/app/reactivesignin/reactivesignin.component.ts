@@ -31,11 +31,15 @@ signin() {
   const existingData = JSON.parse(localStorage.getItem('data') || '[]');
 
   const userLog = existingData.find((user: any) => user.lemail === email && user.pass === password);
-  const userExists = userLog !== undefined;
+  // const userExists = userLog !== undefined;
   
-  if (userExists) {
+  if (userLog) {
+
     localStorage.setItem('user', JSON.stringify(userLog));
-    this.routed.navigate(['/reactdash']);
+    // this.routed.navigate(['/dashboard', userLog.username]);
+    this.routed.navigate([`/reactdash/${userLog.username}`]);
+
+    
   } else {
 
     this.errorMessage = 'Email and password are not correct.';
