@@ -20,6 +20,7 @@ import { guardGuard } from './guards/guard.guard';
 import { GuardashboardComponent } from './guardashboard/guardashboard.component';
 import { ParentpromptComponent } from './parentprompt/parentprompt.component';
 import { MaterialComponent } from './material/material.component';
+import { DatabasedComponent } from './databased/databased.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent, title: 'Home' },
@@ -37,6 +38,8 @@ export const routes: Routes = [
 
     { path: 'parentprompt', component: ParentpromptComponent,},
     { path: 'material', component: MaterialComponent,},
+    { path: 'database', component: DatabasedComponent,},
+
 
 
 

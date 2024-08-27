@@ -1,0 +1,22 @@
+<p>databased works!</p>
+
+<div>
+    <form action="">
+      <input type="text" name="title" [(ngModel)]="title">
+      <textarea name="content" [(ngModel)]="content" id=""></textarea>
+      <button type="submit" (click)="save()">Submit</button>
+    </form>
+  </div>
+   
+
+
+
+<div class="container mt-3">
+  <h2 class="text-center">Saved Notes</h2>
+  <div *ngFor="let contact of notes let i=index" class="card my-2">
+    <div class="card-body">
+      <p><strong>Title:</strong> {{ contact.title }}</p>
+      <p><strong>Content:</strong> {{ contact.content }}</p>
+    </div>
+  </div>
+</div>
