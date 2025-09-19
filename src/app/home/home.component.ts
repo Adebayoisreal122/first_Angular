@@ -1,11 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [RouterModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -13,6 +14,133 @@ export class HomeComponent {
 
   // dependency injection
 constructor(private router: Router) { }
+
+
+
+
+products = [
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 2',
+    description: 'Brief description of the product.',
+    price: '$19.99',
+    image: '/products.png'
+  },
+  {
+    title: 'Product 3',
+    description: 'Brief description of the product.',
+    price: '$29.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+  {
+    title: 'Product 1',
+    description: 'Brief description of the product.',
+    price: '$9.99',
+    image: '/phone1.jpg'
+  },
+]
+
+
 
 
   items =[

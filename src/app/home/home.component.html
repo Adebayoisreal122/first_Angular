@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row">
       @for(item of items; let i = $index; track item) {
         <div class="col-md-4 mb-4">
@@ -17,4 +17,101 @@
         </div>
       }
     </div>
+  </div> -->
+
+
+
+  
+
+<div>
+  <div class="homi">
+    <video src="/backvid.mp4" id="video-background" autoplay loop muted style="
+      width:100%; height: 100vh;">
+    </video>
+    <div class="container-fluid text-center gradient-overlay">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12 p-5 text-light learn hom">
+          <h1 class="well">Welcome to EliteTechStore</h1>
+          <br>
+          <p class=" text-light fs-5">your one-stop destination for all your shopping needs! We are delighted to have you here. Our mission is to provide you with an exceptional shopping experience, offering a wide range of high-quality products at unbeatable prices. </p>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
+<div>
+
+<div class="container-fluid p-4 custom-container  mt-5">
+  <div class="row">
+      
+      <div class="col-12 col-md-6">
+          <div class="p-5 h-100 border bg-light">
+            <h1>
+              Why shop with us?
+            </h1>
+            <p>
+              Quality Assurance: We handpick products to ensure the highest quality standards. <br>
+Customer Satisfaction: Your happiness is our priority. <br>
+Enjoy hassle-free returns and responsive customer support. <br>
+Exclusive Offers: Take advantage of our special deals and discounts. <br>
+Secure Shopping: Shop with confidence with our secure payment methods and data protection.
+            </p>
+          </div>
+      </div>
+      <!-- Column 2 -->
+      <div class="col-12 col-md-6">
+          <div class="p-5 h-100 border bg-light">
+              <img src="/products.png" alt=""  style="width: 100%; height: auto; max-width: 100%">
+          </div>
+      </div>
+  </div>
+</div>
+
+</div>
+
+
+      <div >
+
+          <marquee class="my-5 ">
+              <div class="container marquee">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+                  <img class="mx-2" src="/shop.jpg" alt="">
+              </div>
+          </marquee>
+      </div>
+          <div class="container my-5">
+  <h2 class="text-center mb-4">Featured Products</h2>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let product of products">
+      <div class="card mb-4 shadow-sm">
+        <img [src]="product.image" class="card-img-top fixed-size " alt="Product Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-success">Buy</button>
+          </div>
+            <small class="text-muted">{{ product.price }}</small>
+          </div>
+      </div>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+
